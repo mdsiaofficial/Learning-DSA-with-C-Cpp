@@ -49,13 +49,28 @@ using namespace std;
 //  .\temp.exe
 
 
+int binarySearch(int arr[], int len, int key){
+    int low = 0; 
+    int high = len-1;
+    int mid;
+    while (low<=high)
+    {
+        mid = (low+high)/2;
+        if(arr[mid]==key) return mid;
+
+        if(arr[mid]<key) low = mid+1;
+        else high = mid-2;
+    }
+    return -1;
+}
 int main(){
     fastio;
     nll;
 
     int key = 8;
     // sorting array.
-    int numbers[] = {1,9,2,9,5,3,9,5,6,6,2,3,4,8,17};
+    int numbers[] = {1,9,2,6,2,3,4,8,1,5,3,9,5,6,7};
+    int len = sizeof(numbers)/sizeof(numbers[0]);
     sort(begin(numbers),end(numbers));
     // sort(numbers.begin(), numbers.end()); // not work for array
 
@@ -70,7 +85,7 @@ int main(){
     vector<int> numbers2 = {1,9,2,6,2,3,4,8,1,5,3,9,5,6,7};
     // sort(begin(numbers2),end(numbers2)); // work for vector
     sort(numbers2.begin(), numbers2.end()); // work for vector
-    // sorting array.
+    
     
  
     for(int x: numbers2){
@@ -78,8 +93,15 @@ int main(){
     }
     nll;
 
-    int len = sizeof(numbers)/sizeof(numbers[0]);
-    // finding the array length
+    int arr[] = {1,2,3,4,5,6,7,8,9,11,3,14,16,17};
+    int index = binarySearch(arr, len, key);
+
+    if(index>=0){
+        cout<<"found at index: "<<index;
+    }else{
+        cout<<"Not found";
+    }
+    nll;
 
     
     return 0;
