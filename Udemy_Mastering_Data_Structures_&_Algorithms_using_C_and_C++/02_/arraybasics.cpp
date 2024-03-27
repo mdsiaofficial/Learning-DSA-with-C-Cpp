@@ -20,7 +20,6 @@
 #define CheckBit(x, k) (x & (1LL << k))
 #define scn(n) scanf("%d",&n)
 #define scnll(n) scanf("%lld",&n)
-// #define nl cout<<"\n"
 #define YES cout<<"YES\n"
 #define Yes cout<<"Yes\n"
 #define yes cout<<"yes\n"
@@ -34,7 +33,7 @@
 #define N 200000
 #define pi 3.14159
 
-#define forn(i, n) for (int i = 0; i < int(n); i++)
+#define forn(i, n) for(int i = 0; i < int(n); i++)
 
 #define mod9 90000007
 #define fs(n) fixed<<setprecision(int(n))
@@ -60,5 +59,9 @@ int main(){
     // cout<<x.length();
 
     nll;
+
+    
+
+
     return 0;
 }
