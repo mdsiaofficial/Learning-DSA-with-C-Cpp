@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #include <stdlib.h>
-
+#include <algorithm>
 #define nl endl
 #define nll cout<<endl
 #define ll long long
@@ -51,37 +51,56 @@ using namespace std;
 
 int main(){
     fastio;
-    
+    nll;
 
-    
+    int n=5;
+    // scanf("%d", &n);
+    if (n%2==0){
+        printf("%d is even", n);
+
+    } else {
+        printf("%d is odd", n);
+    }
+    nll;
+    cout<<"Size of n: "<<sizeof(n);
+    // n takes only 4 bytes
 
     nll;
-    int n = 10;
-    for(int i = 0; i < n; i++){
-        cout<<"count "<<nl;
+
+    int e[100];
+    forn(i, 100){
+        e[i]=0;
     }
-    //  order of n
-    // O(n);
-    n=30;
-    forn(i,n){
-        cout<<"New";
-        cout<<"count "<<nl;
+    cout<<sizeof(e);
+    nll;
 
+    int r[100];
+    forn(i, 100){
+        i++;
+        r[i]=0;
     }
-    // O(n);
+    cout<<sizeof(r);
+    nll;
 
-    n=40;
 
-    forn(i,n){
-        cout<<"New";
-        cout<<"count "<<nl;
-        forn(i,n){
-            cout<<"new new";
-            cout<<"count "<<nl;
+    
+    // reversing an array.
+    int nu[7] = {1,2,3,4,5,6,7};
+    reverse(begin(nu), end(nu));
+    // begin(array), end(array)
+    cout<<nu[0];
+    nll;
 
-        }
-    }
-    // O(n^2);
+    reverse(nu, nu+7);
+    // arr, arr+len
+    cout<<nu[0];
+    nll;
+
+    vector<int>nu2 = {1,2,3,4,5,6,7};
+    reverse(nu2.begin(), nu2.end());
+    // arr.begin(), arr.end()
+    cout<<nu2[0];
+
 
     return 0;
 }
