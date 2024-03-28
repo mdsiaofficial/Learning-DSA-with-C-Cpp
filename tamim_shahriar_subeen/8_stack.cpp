@@ -58,7 +58,6 @@ struct Player{
     int score;
 };
 
-
 // pushing the value at the top of the stack
 void push(int data){
     if(top==(MAX-1)) {
@@ -69,12 +68,10 @@ void push(int data){
     }
     top++;
     arrStack[top]=data;
-
 }
 
 // returning the last value of stack
 int pop(){
-
     if(top==-1){
         cout<<"Stack Empty.\n";
         exit(1);
@@ -84,11 +81,9 @@ int pop(){
         // A status code of 0 indicates a successful termination, 
         // while a non-zero status code indicates an error.
     }
-
     int item;
     item = arrStack[top];
     top--;
-
     return item;
 }
 
@@ -98,7 +93,6 @@ void printStack(){
         cout<<"Stack Out.\n";
         return;
     }
-
     for(int i=top; i>=0; i--){
         cout<<i<<" : "<<arrStack[i]<<nl;
     }
@@ -111,11 +105,10 @@ int main(){
     // STRUCT EXAMPLE
     struct Player p1;
     struct Player p2;
-
     strcpy(p1.name, "Ashiq");
     p1.score = 45;
 
-    strcpy(p2.name, "Jannat");
+    strcpy(p2.name, "Chester");
     p2.score = 34;
 
     printf("%s\n", p1.name);
@@ -134,13 +127,6 @@ int main(){
     push(11); // 10th
     push(52); // will return "Stack Overflow" for this.
     push(76); // will return "Stack Overflow" for this.
-   
-    
-    for(int i=0; i<MAX; i++){
-        cout<<arrStack[i]<<" ";
-    }
-
-    
 
     printStack();
 
