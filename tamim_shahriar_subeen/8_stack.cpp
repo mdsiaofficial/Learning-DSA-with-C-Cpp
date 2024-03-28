@@ -139,14 +139,17 @@ int main(){
     for(int i=0; i<MAX; i++){
         cout<<arrStack[i]<<" ";
     }
+
     
 
     printStack();
 
-
-    pop();
-    pop();
-    pop();
+    int outt = pop();
+    cout<<"POP: "<<outt<<nl;
+    outt = pop();
+    cout<<"POP: "<<outt<<nl;
+    outt = pop();
+    cout<<"POP: "<<outt<<nl;
 
     printStack();
 
