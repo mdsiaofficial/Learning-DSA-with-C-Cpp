@@ -50,41 +50,10 @@ using namespace std;
 //  .\temp.exe
 
 
-void insertionSort(int arr[], int n){
-    for(int i=1; i<n; i++){
-        
-        int temp = arr[i];
-        int j = i-1;
-
-        while(j>=0 && arr[j] > temp){
-            arr[j+1] = arr[j];
-            j--;
-        }
-        arr[j+1]=temp;
-
-    }
-
-    for(int i=0; i<n; i++){
-        cout<<arr[i]<<" ";
-    }
-    nll;
-}
 int main(){
     fastio;
     
-    int arr[17] = {6,8,1,9,2,6,2,3,4,8,1,5,3,9,5,6,7};
-    int len = sizeof(arr)/sizeof(arr[0]);
-
-    cout<<"Casual/Unsorted array: \n";
-    for(int i=0; i<len; i++){
-        cout<<arr[i]<<" ";
-    }
-    nll;
     
-
-    cout<<"Sorted array: \n";
-    insertionSort(arr, len);
-    // O(n^2) in the worst case, but O(n) in the best case.
 
     return 0;
 }
