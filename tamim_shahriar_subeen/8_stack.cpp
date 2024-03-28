@@ -50,10 +50,25 @@ using namespace std;
 //  .\temp.exe
 
 
+struct Player{
+    char name[50];
+    int score;
+};
+
 int main(){
     fastio;
-    
-    
+
+    struct Player p1;
+    struct Player p2;
+
+    strcpy(p1.name, "Ashiq");
+    p1.score = 45;
+
+    strcpy(p2.name, "Jannat");
+    p2.score = 34;
+
+    printf("%s\n", p1.name);
+    printf("%d\n", p1.score);
 
     return 0;
 }
