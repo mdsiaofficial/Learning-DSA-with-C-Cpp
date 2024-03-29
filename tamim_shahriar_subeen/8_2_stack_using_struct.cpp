@@ -88,7 +88,6 @@ void push(struct Stack *stack, int item) {
     } else {
         printf("Stack is full!\n");
     }
-
 }
 
 // returning the last value of stack
@@ -116,7 +115,7 @@ void printStack(struct Stack *stack){
     nll;
 }
 
-// making my stack using struct //
+
 
 int main(){
     fastio;
