@@ -49,14 +49,11 @@ using namespace std;
 //  g++ temp.cpp -o temp.exe
 //  .\temp.exe
 
+
+// making my stack using array
 #define MAX 10
 int arrStack[MAX];
 int top = -1;
-
-struct Player{
-    char name[50];
-    int score;
-};
 
 // pushing the value at the top of the stack
 void push(int data){
@@ -99,21 +96,10 @@ void printStack(){
     nll;
 }
 
+// making my stack using struct //
+
 int main(){
     fastio;
-
-    // STRUCT EXAMPLE
-    struct Player p1;
-    struct Player p2;
-    strcpy(p1.name, "Ashiq");
-    p1.score = 45;
-
-    strcpy(p2.name, "Chester");
-    p2.score = 34;
-
-    printf("%s\n", p1.name);
-    printf("%d\n", p1.score);
-
 
     push(4);
     push(6);
@@ -138,6 +124,6 @@ int main(){
     cout<<"POP: "<<outt<<nl;
 
     printStack();
-
+ 
     return 0;
 }
