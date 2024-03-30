@@ -50,16 +50,25 @@ using namespace std;
 //  .\temp.exe
 
 
+// This function implements the selection sort algorithm.
+// It takes an array 'arr' and its size 'n' as input.
+// The function sorts the array in non-decreasing order.
 void selectionSort(int arr[], int n){
+    // Initialize variables for the minimum index and a temporary variable for swapping.
     int minIndex, temp;
+    // Iterate over the array from the first element to the second last.
     for(int i=0; i<n-1; i++){
+        // Assume the current index is the minimum.
         minIndex = i;
         
+        // Iterate over the array from the next element to the last.
         for(int j=i+1; j<n; j++){
+            // If the current element is less than the assumed minimum, update the minimum index.
             if(arr[j]< arr[minIndex]){
                 minIndex = j;
             }
         }
+        // If the minimum index is not the current index, swap the elements.
         if(minIndex!=i){
             temp = arr[i];
             arr[i] = arr[minIndex];
@@ -67,6 +76,7 @@ void selectionSort(int arr[], int n){
         }
     }
 
+    // Print the sorted array.
     for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }

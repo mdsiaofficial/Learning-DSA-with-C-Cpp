@@ -50,12 +50,14 @@ using namespace std;
 //  .\temp.exe
 
 
-// making my stack using array
+// This code defines a stack using an array.
+// The maximum size of the stack is defined by the constant MAX.
 #define MAX 10
 int arrStack[MAX];
 int top = -1;
 
-// pushing the value at the top of the stack
+// This function pushes a new value to the top of the stack.
+// If the stack is already full, it prints "Stack Overflow" and returns.
 void push(int data){
     if(top==(MAX-1)) {
         cout<<"Stack Overflow.\n";
@@ -67,7 +69,8 @@ void push(int data){
     arrStack[top]=data;
 }
 
-// returning the last value of stack
+// This function pops the top value from the stack and returns it.
+// If the stack is empty, it prints "Stack Empty" and exits the program.
 int pop(){
     if(top==-1){
         cout<<"Stack Empty.\n";
@@ -84,6 +87,8 @@ int pop(){
     return item;
 }
 
+// This function prints the current state of the stack.
+// If the stack is empty, it prints "Stack Out".
 void printStack(){
     nll;
     if(top==-1){
@@ -96,7 +101,6 @@ void printStack(){
     nll;
 }
 
-// making my stack using struct //
 
 int main(){
     fastio;

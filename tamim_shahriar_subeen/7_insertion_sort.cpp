@@ -50,20 +50,29 @@ using namespace std;
 //  .\temp.exe
 
 
+// This function implements the insertion sort algorithm.
+// It takes an array 'arr' and its size 'n' as input.
+// The function sorts the array in non-decreasing order.
 void insertionSort(int arr[], int n){
+    // Iterate over the array from the second element to the last.
     for(int i=1; i<n; i++){
         
+        // Store the current element in a temporary variable.
         int temp = arr[i];
+        // Initialize a variable to traverse the sorted part of the array.
         int j = i-1;
 
+        // Move the elements of the sorted part of the array that are greater than the current element to one position ahead of their current position.
         while(j>=0 && arr[j] > temp){
             arr[j+1] = arr[j];
             j--;
         }
+        // Insert the current element at its correct position in the sorted part of the array.
         arr[j+1]=temp;
 
     }
 
+    // Print the sorted array.
     for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }

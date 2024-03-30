@@ -50,9 +50,15 @@ using namespace std;
 //  .\temp.exe
 
 
+// This function implements the bubble sort algorithm.
+// It takes an array 'arr' and its size 'n' as input.
+// The function sorts the array in non-decreasing order.
 void bubbleSort(int arr[], int n){
+    // Iterate over the array from the first element to the second last.
     for(int i=0; i<n; i++){
+        // Iterate over the array from the first element to the last unsorted element.
         for(int j=0; j<n-i-1; j++){
+            // If the current element is greater than the next element, swap them.
             if(arr[j]>arr[j+1]){
                 int temp = arr[j+1];
                 arr[j+1] = arr[j];
@@ -61,6 +67,7 @@ void bubbleSort(int arr[], int n){
         }
     }
 
+    // Print the sorted array.
     for(int i=0; i<n; i++){
         cout<<arr[i]<<" ";
     }

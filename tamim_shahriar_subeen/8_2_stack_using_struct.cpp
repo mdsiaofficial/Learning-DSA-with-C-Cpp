@@ -72,43 +72,54 @@ using namespace std;
 //     int idStu;
 // } InfoStu;
 
-// making my stack using struct
+// Define the maximum size of the stack
 #define maxStack 1000
 
-struct Stack {
+// Define a new type 'Stack' which is a structure
+typedef struct Stack {
+    // Index of the top of the stack
     int top;
+    // Array to store the elements of the stack
     int data[maxStack];
 };
 
-// pushing the value at the top of the stack
+// Function to push a value onto the stack
 void push(struct Stack *stack, int item) {
+    // Check if the stack is full
     if (stack->top < maxStack) {
+        // Add the item to the stack
         stack->data[stack->top] = item;
+        // Update the top of the stack
         stack->top++;
     } else {
         printf("Stack is full!\n");
     }
 }
 
-// returning the last value of stack
+// Function to pop a value from the stack
 int pop(struct Stack *stack) {
     int item;
+    // Check if the stack is empty
     if (stack->top <= 0) {
         printf("Stack is empty!\n");
         return -1;
     } else {
+        // Remove the item from the stack
         stack->top--;
         item = stack->data[stack->top];
     }
     return item;
 }
 
+// Function to print the stack
 void printStack(struct Stack *stack){
     nll;
+    // Check if the stack is empty
     if(stack->top==0){
         cout<<"Stack Out.\n";
         return;
     }
+    // Print the elements of the stack
     for(int i=stack->top-1; i>=0; i--){
         cout<<i<<" : "<<stack->data[i]<<nl;
     }

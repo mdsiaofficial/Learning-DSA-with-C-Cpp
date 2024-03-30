@@ -49,18 +49,29 @@ using namespace std;
 //  .\temp.exe
 
 
+// This function implements the binary search algorithm.
+// It takes an array 'arr', its size 'len', and the key to search for 'key' as input.
+// The function returns the index of the key in the array if found, otherwise it returns -1.
 int binarySearch(int arr[], int len, int key){
+    // Initialize the low and high indices of the array.
     int low = 0; 
     int high = len-1;
+    // Initialize the mid index of the array.
     int mid;
+    // Iterate over the array until the low index is less than or equal to the high index.
     while (low<=high)
     {
+        // Calculate the mid index.
         mid = (low+high)/2;
+        // If the key is found at the mid index, return the index.
         if(arr[mid]==key) return mid;
 
+        // If the key is greater than the mid element, update the low index.
         if(arr[mid]<key) low = mid+1;
+        // If the key is less than the mid element, update the high index.
         else high = mid-2;
     }
+    // If the key is not found in the array, return -1.
     return -1;
 }
 int main(){

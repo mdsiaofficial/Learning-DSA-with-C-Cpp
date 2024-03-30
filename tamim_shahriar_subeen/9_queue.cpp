@@ -50,32 +50,47 @@ using namespace std;
 //  .\temp.exe
 
 
+// Define the size of the queue
 #define qSize 10
 
+// Define a new type 'Queue' which is a structure
 typedef struct{
+    // Array to store the elements of the queue
     int arr[qSize+1];
+    // Index of the head of the queue
     int head;
+    // Index of the tail of the queue
     int tail;
 }Queue;
 
+// Function to add an element to the queue
 bool enqueue(Queue *myqueue, int item){
+    // Check if the queue is full
     if((myqueue->tail +1) % (qSize+1) == myqueue->head){
         cout<<"Queue is full\n";
         return false;
     }
+    // Add the item to the queue
     myqueue->arr[myqueue->tail] = item;
+    // Update the tail of the queue
     myqueue->tail = (myqueue->tail+1) % (qSize+1);
-    return true; // Return true to indicate success
+    // Return true to indicate success
+    return true;
 }
 
+// Function to remove an element from the queue
 int dequeue(Queue *myqueue){
     int item;
+    // Check if the queue is empty
     if(myqueue->tail == myqueue->head){
         cout<<"Queue is empty\n";
         return -1;
     }
+    // Remove the item from the queue
     item = myqueue->arr[myqueue->head];
+    // Update the head of the queue
     myqueue->head = (myqueue->head+1)%(qSize+1);
+    // Return the removed item
     return item;
 }
 
