@@ -88,15 +88,44 @@ int main(){
     myq.tail = 0;
 
     enqueue(&myq, 1);
-
     cout<<"Tail = "<<myq.tail<<nl;
 
+    nll;
     enqueue(&myq, 54);
     cout<<"Tail = "<<myq.tail<<nl;
+    
+    nll;
+
+    enqueue(&myq, 4);
+    cout<<"Tail = "<<myq.tail<<nl;
+    
+    nll;
+
+    enqueue(&myq, 5);
+    cout<<"Tail = "<<myq.tail<<nl;
+    
+    nll;
+
+    enqueue(&myq, 58);
+    cout<<"Tail = "<<myq.tail<<nl;
+    
+    nll;
+
+    enqueue(&myq, 8);
+    cout<<"Tail = "<<myq.tail<<nl;
+    
+    nll;
 
     cout<<"Head: "<<myq.head<<nl;
+    
+    nll;
+
     item = dequeue(&myq);
     cout<<"Item: "<<item<<nl;
+    cout<<"Tail = "<<myq.tail<<nl;
+    
+    nll;
+    
 
     
 
