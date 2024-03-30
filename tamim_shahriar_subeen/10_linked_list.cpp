@@ -116,6 +116,47 @@ Node *removeNode (Node *head, Node *node){
     return head;
 }
 
+// Function to prepend a node to the linked list
+// It takes the head of the linked list and the item to be added as input
+// It returns the head of the linked list after the addition
+Node *prepend (Node *head, int item){
+    // Create a new node with the given item and the current head as the next node
+    Node *newNode = createNode(item, head);
+    // Return the new node
+    return newNode;
+}
+
+// Function to append a node to the linked list
+// It takes the head of the linked list and the item to be added as input
+// It returns the head of the linked list after the addition
+Node *append (Node *head, int item){
+    // Create a new node with the given item and NULL as the next node
+    Node *newNode = createNode(item, NULL);
+    // If the linked list is empty, the new node becomes the head
+    if(head == NULL){
+        return newNode;
+    }
+    // If the linked list is not empty, traverse it to the last node
+    Node *currentNode = head;
+    while(currentNode->next != NULL){
+        currentNode = currentNode->next;
+    }
+    // Add the new node to the end of the linked list
+    currentNode->next = newNode;
+    // Return the head of the updated linked list
+    return head;
+}
+
+// This function inserts a new node with the given item after the given node in the linked list.
+// It takes the node after which the new node is to be inserted and the item to be inserted as input.
+// It does not return anything as the linked list is updated in place.
+void insert(Node *node, int item){
+    // Create a new node with the given item and the next node of the given node as the next node
+    Node *newNode = createNode(item, node->next);
+    // Update the next pointer of the given node to point to the new node
+    node->next = newNode;
+}
+
 int main(){
     fastio;
     
