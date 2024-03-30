@@ -157,6 +157,17 @@ void insert(Node *node, int item){
     node->next = newNode;
 }
 
+void printLinkedList(Node *head){
+    Node *currentNode = head;
+    while (currentNode != NULL){
+        cout<<"Data: "<<currentNode->value<<nl;
+        cout<<"Next: "<<currentNode->next<<nl;
+
+        currentNode = currentNode->next;
+    }
+    
+}
+
 int main(){
     fastio;
     
