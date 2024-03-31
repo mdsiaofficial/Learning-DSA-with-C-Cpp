@@ -1,5 +1,8 @@
 # Roadmaps of DSA
 
+**NB: if anything i miss here...**
+**please fork -> add changes and Pull Request**
+
 [RM - Geekforgeeks](https://www.notion.so/RM-Geekforgeeks-4287328bd3af4ca8bc24503582822c91?pvs=21)
 
 [RM_1 - Dev](https://www.notion.so/RM_1-Dev-099eecf2a8bf409f857a98c0e7d56433?pvs=21)
