@@ -19,18 +19,20 @@ List of Content
 - [x]  Insertion Sort
 - [x]  Stack
 - [x]  Queue
-- [ ]  Linked List
-- [ ]  Tree
-- [ ]  Binary Tree
-- [ ]  Merge Sort
-- [ ]  Quick Sort
+- [x]  Linked List
+- [x]  Tree
+- [x]  Binary Tree
+- [x]  Merge Sort
+- [x]  Quick Sort
 - [ ]  Heap
 - [ ]  Priority Queue
 - [ ]  Binary Search Tree
 - [ ]  Hash Table
 - [ ]  Graph
 - [ ]  Graph Data Structure
-- [ ]  
+
+**NB: if anything i miss here...**
+**please fork -> add changes and Pull Request**
 
 # YouTube videos to follow
 
