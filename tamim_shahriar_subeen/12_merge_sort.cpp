@@ -51,16 +51,23 @@ using namespace std;
 //          or 
 //  ./temp.exe
 
+// Function to merge two subarrays of arr[]
+// First subarray is arr[left..mid]
+// Second subarray is arr[mid+1..right]
 void merge(int arr[], int left, int mid, int right){
 
+    // Initialize variables
     int indexA=left, indexL=0, indexR=0;
     int sizeLeft, sizeRight;
 
+    // Calculate sizes of two subarrays
     sizeLeft = mid - left + 1;
     sizeRight = right - mid;
 
-    int L[sizeLeft], R[sizeRight];
+    // Create temporary arrays
+    int L[sizeLeft], R[sizeRight]; 
 
+    // Copy data to temporary arrays L[] and R[]
     for(int i=0; i<sizeLeft; i++){
         L[i]=arr[left+i];
     }
@@ -68,6 +75,7 @@ void merge(int arr[], int left, int mid, int right){
         R[i]=arr[mid+1+i];
     }
 
+    // Merge the temporary arrays back into arr[left..right]
     while(indexL<sizeLeft && indexR<sizeRight){
         if(L[indexL]<=R[indexR]){
             arr[indexA]=L[indexL]; indexL++;
@@ -76,11 +84,15 @@ void merge(int arr[], int left, int mid, int right){
         }
         indexA++;
     }
+
+    // Copy the remaining elements of L[], if there are any
     while (indexL<sizeLeft){
         arr[indexA] = L[indexL];
         indexL++;
         indexA++;
     }
+
+    // Copy the remaining elements of R[], if there are any
     while (indexR<sizeRight){
         arr[indexA] = R[indexR];
         indexR++;
@@ -88,12 +100,20 @@ void merge(int arr[], int left, int mid, int right){
     }
     
 }
+
+// Main function that sorts arr[left..right] using merge()
 void mergeSort(int arr[], int left, int right){
+    // Base case: If left is greater than or equal to right
     if(left>=right) return;
 
+    // Find the middle point
     int mid = left + (right - left)/2;
+
+    // Sort first and second halves
     mergeSort(arr, left, mid);
     mergeSort(arr, mid+1, right);
+
+    // Merge the sorted halves
     merge(arr, left, mid, right);
 
 }
