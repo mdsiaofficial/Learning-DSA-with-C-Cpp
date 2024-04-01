@@ -27,7 +27,7 @@ List of Content
 - [x]  Binary Tree
 - [x]  Merge Sort
 - [x]  Quick Sort
-- [ ]  Heap
+- [x]  Heap
 - [ ]  Priority Queue
 - [ ]  Binary Search Tree
 - [ ]  Hash Table
