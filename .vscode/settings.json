@@ -6,5 +6,8 @@
         "regex": "cpp",
         "random": "cpp",
         "new": "cpp"
+    },
+    "editor.codeActionsOnSave": {
+        
     }
 }
