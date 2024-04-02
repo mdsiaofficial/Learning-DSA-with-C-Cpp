@@ -87,6 +87,14 @@ bool hash_table_insert(person *p){
     }
     // Get the index in the hash table for the person's name
     int index = hash(p->name);
+
+    for(int i=0; i<TABLE_SIZE; i++){
+        int try = (i+index)%TABLE_SIZE;
+        if(hash_table[try] == NULL){
+            hash_table[try] = p;
+            return true;
+        }
+    }
     // If the entry in the hash table is not NULL, return false
     if(hash_table[index] != NULL){
         return false;
@@ -122,11 +130,24 @@ person *hash_table_find(char *name){
         return NULL;
     }
 }
-int main(){
-    
+
+
+person *hash_table_delete(char *name){
+    int index = hash(name);
+    if( hash_table[index] != NULL && strncmp(hash_table[index]->name, name, TABLE_SIZE) == 0){
+        person *del = hash_table[index];
+        free(hash_table[index]);
+        hash_table[index] = NULL;
+        return del;
+    }else{
+        return NULL;
+    }
+}
+
+void test(){
     char s[MAX_NAME] = "Ashiq";
     printf("Ash => %u\n",hash("Ash"));
-    printf("Che => %u\n",hash("Ashiq"));
+    printf("Che => %u\n",hash("Che"));
     printf("Ashiq => %u\n",hash("Ashiq"));
     printf("Chester => %u\n",hash("Chester"));
     printf("Amena => %u\n",hash("Amena"));
@@ -155,6 +176,10 @@ int main(){
     // So, the total size of the ss array is 3 8 = 24 bytes. 
     // This is why sizeof(ss) is 24. The sizeof operator in 
     // C returns the size of the object or type in bytes
+}
+
+int main(){
+    test();
     nl;
     init_hash_table();
     // print_hash_table();
@@ -170,6 +195,7 @@ int main(){
     person Zihad = {.name = "Zihad", .age=36};
     person Mahi = {.name = "Mahi", .age=36};
     person Ronaldo = {.name = "Ronaldo", .age=36};
+    person Ozil = {.name = "Ozil", .age=36};
 
     hash_table_insert(&Ash);
     hash_table_insert(&Che);
@@ -182,9 +208,8 @@ int main(){
     hash_table_insert(&Zihad);
     hash_table_insert(&Mahi);
     hash_table_insert(&Ronaldo);
-
+    hash_table_insert(&Ozil);
     print_hash_table();
-
     nl;
 
     person *find = hash_table_find("Zihad");
@@ -193,5 +218,26 @@ int main(){
     }else{
         printf("Found %s\n", find->name);
     }
+    
+    find = hash_table_find("Chester");
+    if(find == NULL){
+        printf("Not Found\n");
+    }else{
+        printf("Found %s\n", find->name);
+    }
+
+    find = hash_table_find("Ozil");
+    if(find == NULL){
+        printf("Not Found\n");
+    }else{
+        printf("Found %s\n", find->name);
+    }
+
+    print_hash_table();
+
+    hash_table_delete("Ozil");
+    print_hash_table();
+    print_hash_table();
+
     return 0;
 }
