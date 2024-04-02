@@ -15,7 +15,8 @@
         "tuple": "c",
         "type_traits": "c",
         "utility": "c",
-        "charconv": "c"
+        "charconv": "c",
+        "string": "c"
     },
     "editor.codeActionsOnSave": {
         
