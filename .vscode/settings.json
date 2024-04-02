@@ -5,7 +5,17 @@
         "string_view": "cpp",
         "regex": "cpp",
         "random": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "optional": "c",
+        "istream": "c",
+        "ratio": "c",
+        "system_error": "c",
+        "array": "c",
+        "functional": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "charconv": "c"
     },
     "editor.codeActionsOnSave": {
         
