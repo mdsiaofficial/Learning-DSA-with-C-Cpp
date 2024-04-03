@@ -61,9 +61,11 @@ ull hash(char *name){
     // Initialize the hash value
     ull hash_value = 0;
     // Iterate over each character in the name
+    // hash_value =name[0] + (name[1]*2);
     for(int i=0; i<length; i++){
         // Add the ASCII value of the character to the hash value
-        hash_value+=name[i];
+        hash_value+=name[i]*(i+1);
+        // hash_value+=name[i]*pow(2,i);
     }
     // Modulo the hash value by the size of the hash table
     hash_value = (hash_value)%TABLE_SIZE;
@@ -235,9 +237,9 @@ int main(){
 
     print_hash_table();
 
-    hash_table_delete("Ozil");
-    print_hash_table();
-    print_hash_table();
+    // hash_table_delete("Ozil");
+    // print_hash_table();
+    // print_hash_table();
 
     return 0;
 }
