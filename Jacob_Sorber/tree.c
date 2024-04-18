@@ -45,6 +45,11 @@ Node* get_new_node(int data){
     return new_node;
 }
 
+void print_tabs(int numtabs){
+    for (int i = 0; i < numtabs; i++){
+        printf("\t");
+    }
+}
 
 void print_tree(Node *root){
     if(root== NULL){
@@ -60,6 +65,29 @@ void print_tree(Node *root){
 
     // printf("\n\n");
 }
+
+
+void print_tree_rec(Node *root, int level){
+    if(root== NULL){
+        print_tabs(level);
+        printf("Empty Tree\n");
+        return;
+    }
+
+    print_tabs(level);
+    printf("value = %d\n", root->data);
+    print_tabs(level);
+    printf("left\n");
+
+    print_tree_rec(root->left, level+1);
+    print_tabs(level);
+
+    printf("right\n");
+    print_tree_rec(root->right, level+1);
+
+    print_tabs(level);
+    printf("Done\n\n");
+}
 int main(int argc, char **argv) {
 
     Node *n1 = get_new_node(15);
@@ -74,7 +102,7 @@ int main(int argc, char **argv) {
     n3->left = n4;
     n3->right = n5;
 
-    print_tree(n1);
+    print_tree_rec(n1, 5);
 
     free(n1);
     free(n2);
